@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Custom Theme and Renderer Codelab</title>
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+  <script src="https://unpkg.com/@blockly/dev-tools@2.0.0/dist/index.js"></script>
+  <script src="index.js"></script>
+ <script src="custom_renderer.js"></script>
+
+<script>
+  'use strict';
+
+ let workspace = null;
+
+  function start() {
+    // Create main workspace.
+    workspace = Blockly.inject('blocklyDiv',
+      {
+        toolbox: toolboxCategories,
+        theme: Blockly.Themes.Halloween,
+        renderer: 'customrenderer'
+      });
+ } 
+</script>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      background-color: #c1c1c1;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 140%;
+      margin: 10px;
+    }
+
+    #blocklyDiv {
+      float: bottom;
+      height: 90%;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body onload="start()">
+  <h1>Custom Theme and Renderer Codelab</h1>
+  <div id="blocklyDiv"></div>
+</body>
+
+</html>
